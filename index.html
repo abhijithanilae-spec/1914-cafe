@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>1914 Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Cormorant+Garamond:wght@500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="page" id="page">
+<div id="glow"></div>
+<header class="nav" id="nav">
+  <a class="logo" href="#home" aria-label="1914 Café, home"><span class="lm" role="img"></span></a>
+  <nav class="links" aria-label="Main"><a href="#home">Home</a><a href="#menu">Menu</a><a href="#experience">Experience</a><a href="#spaces">Spaces</a><a href="info.html">Info</a><a href="gallery.html">Gallery</a><a href="#contact">Contact</a></nav>
+  <div class="nav-r"><button class="btn gold" type="button" data-book>Book Table</button></div>
+</header>
+<main>
+<section class="hero" id="home">
+  <h1><span class="w"><i style="--i:0">Coffee,</i></span> <span class="w"><i style="--i:1">Reimagined</i></span><br><span class="w"><i style="--i:2">in</i></span> <span class="w"><i style="--i:3">Modern</i></span> <span class="w"><i style="--i:4">Spaces</i></span></h1>
+  <p class="lede">Kape classics, signature lattes, matcha and croffles, served in rooms made for long talks.</p><a class="rate" href="https://share.google/X0Y6IuUKryhxJfCof" target="_blank" rel="noopener" aria-label="Rated 4.9 out of 5 on Google. Opens in a new tab."><span class="stars"></span><b id="rn">4.9</b><span class="g">on Google</span></a>
+  <div class="tiles" id="tiles">
+    <div class="tile t1" data-art="cup"></div>
+    <div class="tile t2" data-art="cup2"></div>
+    <div class="tile t3" data-art="glass"></div>
+    <div class="tile t4" data-art="room"></div>
+    
+  </div>
+  <div class="cta"><a class="btn brown" href="info.html" data-mag>Explore Menu</a><button class="btn soft" type="button" data-book data-mag>Reserve Now</button></div>
+</section>
+
+<section id="menu">
+  <h2 class="rv">Our Best Sellers</h2>
+  <p class="sub rv">Tilt a card and pick a size to see the price.</p>
+  <div class="cards" id="cards"></div>
+  <h2 class="rv" style="margin-top:84px">The Full Menu</h2>
+  <p class="sub rv">Browse every category, with prices for each size.</p>
+  <div class="tabs mtabs" id="mt" role="tablist" aria-label="Menu categories"></div>
+  <div id="mp" role="tabpanel"></div>
+  <p class="mnote">Gamay is the small size and Dako is the large.</p>
+  <div class="cta"><a class="btn brown" href="info.html">About our drinks</a><a class="btn soft" href="gallery.html">See the gallery</a></div>
+</section>
+
+<section class="conv" id="experience">
+  <h2 class="rv">Designed for Modern Conversations</h2>
+  <p class="sub rv">Soft light, warm materials and acoustics that keep a table of six as easy as a table for one.</p>
+  <div class="split rv" id="spaces">
+    <div>
+      <div class="tabs" role="tablist" aria-label="Spaces"></div>
+      <p id="stxt"></p>
+      <button class="btn brown" type="button" id="rsv" data-book data-mag>Reserve the Window bar</button>
+    </div>
+    <div class="room" id="room"><span class="seats" id="seats"></span></div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div><span class="lm" style="width:64px;height:64px;margin-bottom:8px" role="img" aria-label="1914 Café"></span><strong>Stay in the loop</strong><small><a href="https://share.google/X0Y6IuUKryhxJfCof" target="_blank" rel="noopener" style="color:inherit">Rated 4.9 on Google</a>. Hear about new menu items first.</small></div>
+  <form class="nl" id="nl" novalidate><input type="email" id="em" placeholder="Your email" aria-label="Email address"><button type="submit" aria-label="Subscribe">→</button></form>
+  <div class="soc">
+    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.5c0-.6.4-.8.8-.8H17V2h-3c-3 0-4 2-4 4v2H8v3.5h2V22h4v-10.5h2.8L17 8z"/></svg></a>
+    <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+    <a href="#" class="pin">Pinterest</a>
+  </div>
+</footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dt">
+  <form id="bf" novalidate>
+    <h3 id="dt">Book a table</h3>
+    <p class="sp">Choose a space, date and time.</p>
+    <span class="lab">Space</span><div class="row" id="spc"></div>
+    <label for="dd">Date</label><input type="date" id="dd">
+    <span class="lab">Guests</span>
+    <div class="row step"><button type="button" id="gm" aria-label="Fewer guests">−</button><output id="gn">2</output><button type="button" id="gp" aria-label="More guests">+</button></div>
+    <span class="lab">Time</span>
+    <div class="row" id="times"></div>
+    <label for="dn">Name</label><input type="text" id="dn" autocomplete="name">
+    <p class="err" id="derr" role="alert"></p>
+    <div class="acts"><button class="btn soft" type="button" id="dx">Cancel</button><button class="btn brown" type="submit">Confirm booking</button></div>
+  </form>
+</dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const cup=(c,s,r,f)=>`<svg viewBox="0 0 120 100" aria-hidden="true"><g class="steam"><path d="M46 36c-6-6 6-10 0-20"/><path d="M60 36c-6-6 6-10 0-24"/><path d="M74 36c-6-6 6-10 0-20"/></g><ellipse cx="58" cy="84" rx="46" ry="11" fill="${s}"/><ellipse cx="58" cy="82" rx="30" ry="6" fill="#0002"/><path d="M24 46h68c0 24-8 38-34 38S24 70 24 46z" fill="${c}"/><path d="M92 52c14-2 18 10 8 18-4 3-9 4-13 4" fill="none" stroke="${c}" stroke-width="6" stroke-linecap="round"/><ellipse cx="58" cy="46" rx="34" ry="9" fill="${r}"/><ellipse cx="58" cy="47" rx="29" ry="6.5" fill="${f}"/><path d="M58 51c-9-3-14-8-8-10 3-1 6 1 8 3 2-2 5-4 8-3 6 2 1 7-8 10z" fill="#f6e6cc"/></svg>`;
+const glass=(a,b,id)=>`<svg viewBox="0 0 80 130" aria-hidden="true"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ecd6b8"/><stop offset=".4" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><path d="M52 2L40 60" stroke="#2b1c14" stroke-width="4" stroke-linecap="round"/><path d="M14 20h52l-5 100c0 4-3 7-7 7H26c-4 0-7-3-7-7z" fill="rgba(255,255,255,.35)" stroke="rgba(255,255,255,.85)" stroke-width="2"/><path d="M17 44h46l-4 76c0 3-3 5-6 5H27c-3 0-6-2-6-5z" fill="url(#${id})"/><rect class="ice" x="22" y="32" width="15" height="15" rx="3" fill="rgba(255,255,255,.6)"/><rect class="ice" x="40" y="36" width="15" height="15" rx="3" fill="rgba(255,255,255,.5)"/><rect class="ice" x="30" y="50" width="14" height="14" rx="3" fill="rgba(255,255,255,.4)"/></svg>`;
+const room=`<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="140" fill="#ead8ba"/><rect y="98" width="200" height="42" fill="#cfab80"/><g fill="#b98a5c"><rect x="10" y="34" width="60" height="4"/><rect x="10" y="62" width="60" height="4"/><rect x="130" y="34" width="60" height="4"/><rect x="130" y="62" width="60" height="4"/></g><g fill="#8a5a3b"><rect x="16" y="22" width="8" height="12"/><rect x="30" y="26" width="10" height="8"/><rect x="48" y="20" width="7" height="14"/><rect x="138" y="24" width="12" height="10"/><rect x="160" y="20" width="8" height="14"/><rect x="20" y="52" width="12" height="10"/><rect x="150" y="50" width="9" height="12"/></g><g stroke="#7a5a40" stroke-width="1.5"><path d="M100 0v26M70 0v14M130 0v14"/></g><g class="glow" fill="rgba(255,214,140,.55)"><circle cx="100" cy="32" r="22"/><circle cx="70" cy="20" r="14"/><circle cx="130" cy="20" r="14"/></g><g fill="#8a5a3b"><path d="M88 26h24a12 12 0 0 0-24 0z"/><path d="M62 14h16a8 8 0 0 0-16 0z"/><path d="M122 14h16a8 8 0 0 0-16 0z"/></g><rect x="58" y="92" width="84" height="6" rx="3" fill="#8a5a3b"/><rect x="96" y="98" width="8" height="32" fill="#6e452c"/><circle cx="84" cy="88" r="5" fill="#fff"/><circle cx="116" cy="88" r="5" fill="#fff"/><g fill="#a06a45"><rect x="34" y="96" width="22" height="5" rx="2"/><rect x="38" y="101" width="3" height="28"/><rect x="50" y="101" width="3" height="28"/><rect x="144" y="96" width="22" height="5" rx="2"/><rect x="148" y="101" width="3" height="28"/><rect x="160" y="101" width="3" height="28"/></g></svg>`;
+const IM={cups:"Assets/cups.jpg",latte:"Assets/latte.jpeg",loft:"Assets/loft.jpg",window:"Assets/window.jpg"};
+const art={cup:cup('#fff','#efe6da','#f6efe6','#b98558'),cup2:cup('#fffdf8','#ece2d4','#f6efe6','#c99a68'),glass:glass('#c98a4e','#5b3320','g1'),room,room2:room.replace('<svg ','<svg style="transform:scaleX(-1);filter:hue-rotate(-12deg)" ')};
+const im=(k,pos,alt)=>`<img src="${IM[k]}" alt="${alt}" style="object-position:${pos}" decoding="async">`;
+art.cup=im('cups','40% 50%','1914 Café cups beside a basket of croffles');art.cup2=im('latte','50% 70%','Latte with leaf latte art');art.glass=im('loft','50% 35%','Seating area with coffee cup wall art');art.room=im('window','50% 65%','Window table with a view of the street');
+$$('[data-art]').forEach(e=>e.innerHTML=art[e.dataset.art]);
+
+/* hero parallax + cursor glow */
+const hero=$('#home'),tiles=$('#tiles'),glow=$('#glow');
+hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();tiles.style.setProperty('--mx',((e.clientX-r.left)/r.width-.5)*2);tiles.style.setProperty('--my',((e.clientY-r.top)/r.height-.5)*2)});
+hero.addEventListener('pointerleave',()=>{tiles.style.setProperty('--mx',0);tiles.style.setProperty('--my',0)});
+let gx=0,gy=0,tx=0,ty=0;
+addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;glow.style.opacity=1});
+(function loop(){gx+=(tx-gx)*.12;gy+=(ty-gy)*.12;glow.style.transform=`translate(${gx}px,${gy}px)`;requestAnimationFrame(loop)})();
+$$('[data-mag]').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.translate=`${(e.clientX-r.left-r.width/2)*.2}px ${(e.clientY-r.top-r.height/2)*.3}px`});b.addEventListener('pointerleave',()=>b.style.translate='')});
+
+/* nav */
+const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('sm',scrollY>30),{passive:true});
+const links=$$('.links a'),spy=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+['home','menu','experience','contact'].forEach(i=>spy.observe($('#'+i)));
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
+$$('.rv').forEach(e=>io.observe(e));
+
+/* toast */
+let tt;const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2800)};
+
+/* menu cards */
+const items=[
+{n:'Spanish Latte',d:'Our best-selling latte: espresso with sweet, creamy milk.',z:[['Hot 8oz',16],['Hot 12oz',18],['Iced 12oz',18],['Iced 14oz',20]],g:'linear-gradient(160deg,#f2dec6,#b98c66)',a:cup('#fffdf8','#ece2d4','#f6efe6','#c99a68')},
+{n:'Mango Matcha',d:'Iced matcha latte layered with sweet mango.',z:[['Iced 14oz',21]],g:'linear-gradient(160deg,#f6ecc9,#cdd8a4)',a:glass('#e3a93d','#6c8a3d','g2')},
+{n:'Ube Matcha',d:'Iced matcha latte with creamy purple ube.',z:[['Iced 14oz',21]],g:'linear-gradient(160deg,#e8dcf2,#c6d3a6)',a:glass('#a98bc9','#5d7a3a','g3')}];
+$('#cards').innerHTML=items.map((it,i)=>`<article class="card rv" data-i="${i}" data-s="0" style="--g:${it.g};transition-delay:${i*120}ms"><h3>${it.n}</h3>${it.a}<p>${it.d}</p><div class="sizes" role="group" aria-label="Size">${it.z.map((s,j)=>`<button type="button" aria-pressed="${j==0}" data-s="${j}">${s[0]}</button>`).join('')}</div><div class="buy"><span class="price">${it.z[0][1]}</span><a class="btn brown" href="info.html#${it.n.toLowerCase().replace(/ /g,'-')}">Details</a></div></article>`).join('');
+$$('.card').forEach(c=>{io.observe(c);
+c.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.transform=`perspective(800px) rotateY(${(x-.5)*12}deg) rotateX(${(.5-y)*12}deg) translateY(-4px)`;c.style.setProperty('--gx',x*100+'%');c.style.setProperty('--gy',y*100+'%')});
+c.addEventListener('pointerleave',()=>c.style.transform='');
+c.addEventListener('click',e=>{const it=items[c.dataset.i],sz=e.target.closest('.sizes button');
+if(sz){c.dataset.s=sz.dataset.s;$$('.sizes button',c).forEach(b=>b.setAttribute('aria-pressed',b===sz));const p=$('.price',c);p.textContent=it.z[sz.dataset.s][1];p.classList.remove('pop');void p.offsetWidth;p.classList.add('pop')}})});
+
+/* full menu */
+const M=[
+{k:'Kape Classics',t:'Kape',a:'Classics',b:[{c:['Hot|Gamay 8oz','Hot|Dako 12oz','Iced|Gamay 12oz','Iced|Dako 12oz'],r:[['Latte',14,16,16,18],['Americano',12,14,14,16],['Cappuccino',14,16],['Cortado',14],['Espresso (double shot)',10]]}]},
+{k:'Flavored Latte',t:'Flavored Latte',b:[{c:['Hot|Gamay 8oz','Hot|Dako 12oz','Iced|Gamay 12oz','Iced|Dako 14oz'],r:[['Spanish Latte*',16,18,18,20],['Caramel Latte',18,20,19,21],['Hazelnut Latte',18,20,20,22],['Biscoff Latte',18,20,20,22],['Pistachio Latte',19,21,21,23],['Mocha Latte',15,18,18,20],['Matcha Latte',18,20,20,21]]}]},
+{k:'Signature',t:'1914 Café',a:'Signature',b:[{c:[''],r:[['1914 Creamy Latte',21],['Ube Latte',21],['V60',30]]},{c:['Hot|Gamay 8oz','Hot|Dako 12oz'],r:[['Hot Choco',15,19]]}]},
+{k:'Matcha',t:'Matcha Series',a:'Iced',b:[{c:['Iced|Dako 14oz'],r:[['Matcha Latte',21],['Mango Matcha*',21],['Ube Matcha*',21],['Strawberry Matcha',21],['Biscoff Matcha',21],['Dirty Matcha',21]]}]},
+{k:'Non-Coffee',t:'Non-Coffee',a:'Iced',b:[{c:['Iced|Dako 14oz'],r:[['Strawberry Mojito',18],['Passionfruit Mojito',18],['Peach Mojito',18],['Mango Mojito',18],['Passionfruit Mango Mojito',21],['Peach Mango Mojito',21],['Strawberry Mango Mojito',21]]}]},
+{k:'Croffle',t:'Croffle',b:[{c:[''],r:[['Oreo Chocolate Crunch',23],['Strawberry Delight',23],['Banana Nutella',23],['Caramel Banana',23],['Biscoff Lover',23],['Pistachio Royale',23]]}]}];
+const mt=$('#mt'),mp=$('#mp');
+mt.innerHTML=M.map((s,i)=>`<button role="tab" type="button" aria-selected="${i==0}">${s.k}</button>`).join('');
+const showM=i=>{const s=M[i];$$('button',mt).forEach((b,j)=>b.setAttribute('aria-selected',j==i));
+mp.innerHTML=`<h3 class="mh"><span>${s.t}</span>${s.a?`<em>${s.a}</em>`:''}</h3>`+s.b.map(b=>`<div class="mg" style="--n:${b.c.length}"><div class="mr mc"><span></span>${b.c.map(c=>{const[x,y]=c.split('|');return`<span>${y?x+'<small>'+y+'</small>':'<small>'+x+'</small>'}</span>`}).join('')}</div>${b.r.map(r=>{const bs=r[0].endsWith('*'),n=bs?r[0].slice(0,-1):r[0];return`<div class="mr"><span class="mn">${n}${bs?'<i class="bs">Best seller</i>':''}</span>${b.c.map((c,j)=>r[j+1]!=null?`<span class="pr" aria-label="${n} ${c.replace('|',' ')}, ${r[j+1]}">${r[j+1]}</span>`:'<span></span>').join('')}</div>`}).join('')}</div>`).join('');
+mp.classList.remove('sw');void mp.offsetWidth;mp.classList.add('sw')};
+mt.onclick=e=>{const b=e.target.closest('button');if(b)showM($$('button',mt).indexOf(b))};
+showM(0);
+
+/* google rating */
+(()=>{const s=$('.stars');s.innerHTML=[0,1,2,3,4].map(i=>{const o=i<4?1:.9;return`<svg viewBox="0 0 24 24" style="--j:${i}" aria-hidden="true"><defs><linearGradient id="st${i}"><stop offset="${o}" stop-color="#e5a52a"/><stop offset="${o}" stop-color="rgba(160,130,90,.35)"/></linearGradient></defs><path fill="url(#st${i})" d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.3 5.8 21l1.4-7L2 9.3l7-.8z"/></svg>`}).join('');
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+const n=$('#rn');n.textContent='0.0';let t0;const f=t=>{t0??=t;const k=Math.min((t-t0)/1300,1);n.textContent=(4.9*(1-Math.pow(1-k,3))).toFixed(1);if(k<1)requestAnimationFrame(f)};setTimeout(()=>requestAnimationFrame(f),900)})();
+
+/* spaces */
+const sp=[{n:'Window bar',t:'A table by the glass with the street moving outside. Easy for a quick catch-up or a long afternoon.',s:'Street view',k:'window'},{n:'Quiet loft',t:'Warm light and soft green seating, made for a slow, uninterrupted conversation.',s:'Warm and quiet',k:'loft'}];
+let cur=0;const tabs=$('#spaces .tabs'),rm=$('#room');rm.insertAdjacentHTML('afterbegin',sp.map(s=>`<img src="${IM[s.k]}" alt="${s.n}" style="object-position:${s.k=='loft'?'50% 35%':'50% 70%'}">`).join(''));
+tabs.innerHTML=sp.map((s,i)=>`<button role="tab" type="button" aria-selected="${i==0}">${s.n}</button>`).join('');
+const show=i=>{cur=i;$$('button',tabs).forEach((b,j)=>b.setAttribute('aria-selected',j==i));const t=$('#stxt');t.textContent=sp[i].t;t.classList.remove('sw');void t.offsetWidth;t.classList.add('sw');$$('img',rm).forEach((m,j)=>m.classList.toggle('on',j==i));$('#seats').textContent=sp[i].s;$('#rsv').textContent='Reserve the '+sp[i].n};
+tabs.onclick=e=>{const b=e.target.closest('button');if(b)show($$('button',tabs).indexOf(b))};show(0);
+
+/* booking */
+const dlg=$('#dlg'),times=['9:00 am','11:30 am','3:00 pm','6:30 pm'];let guests=2,time=times[1];
+$('#times').innerHTML=times.map(t=>`<button type="button" aria-pressed="${t===time}">${t}</button>`).join('');
+$('#times').onclick=e=>{const b=e.target.closest('button');if(!b)return;time=b.textContent;$$('#times button').forEach(x=>x.setAttribute('aria-pressed',x===b))};
+let space=0;const setSp=i=>{space=i;$$('#spc button').forEach((x,j)=>x.setAttribute('aria-pressed',j==i))};
+$('#spc').innerHTML=sp.map((s,i)=>`<button type="button" aria-pressed="${i==0}">${s.n}</button>`).join('');
+$('#spc').onclick=e=>{const b=e.target.closest('button');if(b)setSp($$('#spc button').indexOf(b))};
+const setG=n=>{guests=Math.max(1,Math.min(12,n));$('#gn').textContent=guests};
+$('#gm').onclick=()=>setG(guests-1);$('#gp').onclick=()=>setG(guests+1);
+$$('[data-book]').forEach(b=>b.addEventListener('click',()=>{const d=$('#dd'),n=new Date();d.min=d.value=new Date(n-n.getTimezoneOffset()*6e4).toISOString().slice(0,10);if(b.closest('#spaces'))setSp(cur);$('#derr').textContent='';dlg.showModal()}));
+$('#dx').onclick=()=>dlg.close();
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+$('#bf').addEventListener('submit',e=>{e.preventDefault();const n=$('#dn').value.trim(),d=$('#dd').value;if(!n){$('#derr').textContent='Add a name so we can hold the table.';$('#dn').focus();return}if(!d){$('#derr').textContent='Choose a date.';return}
+dlg.close();toast(`Table for ${guests} in the ${sp[space].n} at ${time} is requested, ${n}. See you at 1914 Café.`)});
+
+/* newsletter */
+$('#nl').addEventListener('submit',e=>{e.preventDefault();const v=$('#em').value.trim();if(!/^\S+@\S+\.\S+$/.test(v)){toast('Enter a valid email address.');$('#em').focus();return}$('#em').value='';toast('You’re on the list. Watch for Friday’s menu.')});
+</script>
+</body>
+</html>

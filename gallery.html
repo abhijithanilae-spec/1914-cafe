@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gallery | 1914 Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Cormorant+Garamond:wght@500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="page" id="page">
+<header class="nav" id="nav">
+  <a class="logo" href="index.html" aria-label="1914 Café, home"><span class="lm" role="img"></span></a>
+  <nav class="links" aria-label="Main"><a href="index.html">Home</a><a href="index.html#experience">Experience</a><a href="index.html#menu">Menu</a><a href="info.html">Info</a><a href="gallery.html" class="on">Gallery</a><a href="#contact">Contact</a></nav>
+  <div class="nav-r"><a class="btn gold" href="index.html#experience">Book Table</a></div>
+</header>
+<main>
+<section class="ph"><h1>Gallery</h1><p>A look at our rooms, cups and croffles. Tap any picture to see it larger.</p>
+<div class="chips" id="fl" role="group" aria-label="Filter"><button type="button" data-k="all" aria-pressed="true">All</button><button type="button" data-k="drinks" aria-pressed="false">Drinks</button><button type="button" data-k="treats" aria-pressed="false">Treats</button><button type="button" data-k="spaces" aria-pressed="false">Spaces</button></div></section>
+<section><div class="gal" id="gal"></div></section>
+<dialog id="lb" aria-label="Photo viewer"><div class="big" id="big"></div><h3 id="cap"></h3><div class="lbn"><button class="btn soft" type="button" id="pv">Previous</button><button class="btn soft" type="button" id="nx">Next</button><button class="btn brown" type="button" id="cl">Close</button></div></dialog>
+</main>
+<footer id="contact">
+  <div><span class="lm" style="width:64px;height:64px;margin-bottom:8px" role="img" aria-label="1914 Café"></span><strong>Stay in the loop</strong><small><a href="https://share.google/X0Y6IuUKryhxJfCof" target="_blank" rel="noopener" style="color:inherit">Rated 4.9 on Google</a>. Kape classics, signature lattes, matcha and croffles.</small></div>
+  
+  <div class="soc">
+    <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8V6.5c0-.6.4-.8.8-.8H17V2h-3c-3 0-4 2-4 4v2H8v3.5h2V22h4v-10.5h2.8L17 8z"/></svg></a>
+    <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></a>
+    <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+    <a href="#" class="pin">Pinterest</a>
+  </div>
+</footer>
+</div>
+<script>
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('sm',scrollY>30),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.08});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+const cup=(c,s,r,f)=>`<svg viewBox="0 0 120 100" aria-hidden="true"><g class="steam"><path d="M46 36c-6-6 6-10 0-20"/><path d="M60 36c-6-6 6-10 0-24"/><path d="M74 36c-6-6 6-10 0-20"/></g><ellipse cx="58" cy="84" rx="46" ry="11" fill="${s}"/><ellipse cx="58" cy="82" rx="30" ry="6" fill="#0002"/><path d="M24 46h68c0 24-8 38-34 38S24 70 24 46z" fill="${c}"/><path d="M92 52c14-2 18 10 8 18-4 3-9 4-13 4" fill="none" stroke="${c}" stroke-width="6" stroke-linecap="round"/><ellipse cx="58" cy="46" rx="34" ry="9" fill="${r}"/><ellipse cx="58" cy="47" rx="29" ry="6.5" fill="${f}"/><path d="M58 51c-9-3-14-8-8-10 3-1 6 1 8 3 2-2 5-4 8-3 6 2 1 7-8 10z" fill="#f6e6cc"/></svg>`;
+const glass=(a,b,id)=>`<svg viewBox="0 0 80 130" aria-hidden="true"><defs><linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ecd6b8"/><stop offset=".4" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient></defs><path d="M52 2L40 60" stroke="#2b1c14" stroke-width="4" stroke-linecap="round"/><path d="M14 20h52l-5 100c0 4-3 7-7 7H26c-4 0-7-3-7-7z" fill="rgba(255,255,255,.35)" stroke="rgba(255,255,255,.85)" stroke-width="2"/><path d="M17 44h46l-4 76c0 3-3 5-6 5H27c-3 0-6-2-6-5z" fill="url(#${id})"/><rect class="ice" x="22" y="32" width="15" height="15" rx="3" fill="rgba(255,255,255,.6)"/><rect class="ice" x="40" y="36" width="15" height="15" rx="3" fill="rgba(255,255,255,.5)"/><rect class="ice" x="30" y="50" width="14" height="14" rx="3" fill="rgba(255,255,255,.4)"/></svg>`;
+const room=`<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="200" height="140" fill="#ead8ba"/><rect y="98" width="200" height="42" fill="#cfab80"/><g fill="#b98a5c"><rect x="10" y="34" width="60" height="4"/><rect x="10" y="62" width="60" height="4"/><rect x="130" y="34" width="60" height="4"/><rect x="130" y="62" width="60" height="4"/></g><g fill="#8a5a3b"><rect x="16" y="22" width="8" height="12"/><rect x="30" y="26" width="10" height="8"/><rect x="48" y="20" width="7" height="14"/><rect x="138" y="24" width="12" height="10"/><rect x="160" y="20" width="8" height="14"/><rect x="20" y="52" width="12" height="10"/><rect x="150" y="50" width="9" height="12"/></g><g stroke="#7a5a40" stroke-width="1.5"><path d="M100 0v26M70 0v14M130 0v14"/></g><g class="glow" fill="rgba(255,214,140,.55)"><circle cx="100" cy="32" r="22"/><circle cx="70" cy="20" r="14"/><circle cx="130" cy="20" r="14"/></g><g fill="#8a5a3b"><path d="M88 26h24a12 12 0 0 0-24 0z"/><path d="M62 14h16a8 8 0 0 0-16 0z"/><path d="M122 14h16a8 8 0 0 0-16 0z"/></g><rect x="58" y="92" width="84" height="6" rx="3" fill="#8a5a3b"/><rect x="96" y="98" width="8" height="32" fill="#6e452c"/><circle cx="84" cy="88" r="5" fill="#fff"/><circle cx="116" cy="88" r="5" fill="#fff"/><g fill="#a06a45"><rect x="34" y="96" width="22" height="5" rx="2"/><rect x="38" y="101" width="3" height="28"/><rect x="50" y="101" width="3" height="28"/><rect x="144" y="96" width="22" height="5" rx="2"/><rect x="148" y="101" width="3" height="28"/><rect x="160" y="101" width="3" height="28"/></g></svg>`;
+
+const croffle=(t,c)=>`<svg viewBox="0 0 120 100" aria-hidden="true"><ellipse cx="60" cy="86" rx="46" ry="9" fill="#0001"/><ellipse cx="60" cy="58" rx="44" ry="26" fill="#d9a35f"/><ellipse cx="60" cy="54" rx="40" ry="22" fill="#e8b878"/><g stroke="#c58b45" stroke-width="2" opacity=".7"><path d="M30 40l50 30M45 34l50 30M20 52l50 30M75 33L30 66M92 40L45 72"/></g><ellipse cx="60" cy="50" rx="26" ry="12" fill="${t}"/><path d="M38 48c10 6 32 6 44 0" stroke="${c}" stroke-width="4" fill="none" stroke-linecap="round"/></svg>`;
+/* To add your own photos: put files in the Assets folder and add a line like
+   ['spaces','Caption','img','Assets/my-photo.jpg'] to this list. kinds: drinks, treats, spaces */
+const G=[
+['spaces','Window bar','img','Assets/window.jpg'],
+['drinks','Cups and croffles','img','Assets/cups.jpg'],
+['spaces','Quiet loft','img','Assets/loft.jpg'],
+['drinks','Leaf latte art','img','Assets/latte.jpeg'],
+['drinks','Spanish Latte','img','Assets/Spanish latte.jpeg'],
+['drinks','Iced Spanish Latte','img','Assets/iced spanish latte.jpeg'],
+['drinks','Mango Matcha','svg',glass('#e3a93d','#6c8a3d','a1'),'linear-gradient(160deg,#f6ecc9,#cdd8a4)'],
+['drinks','Ube Matcha','svg',glass('#a98bc9','#5d7a3a','a2'),'linear-gradient(160deg,#e8dcf2,#c6d3a6)'],
+['drinks','Iced Latte','svg',glass('#c98a4e','#5b3320','a3'),'linear-gradient(160deg,#f3e3cc,#d9b891)'],
+['drinks','Strawberry Matcha','svg',glass('#e98aa0','#6c8a3d','a4'),'linear-gradient(160deg,#fbe0e4,#cfe0b0)'],
+['drinks','Peach Mango Mojito','svg',glass('#f4b76a','#d9703a','a5'),'linear-gradient(160deg,#fff0d2,#f6c99a)'],
+['drinks','Hot Choco','svg',cup('#fff','#efe6da','#f6efe6','#6a3f2a'),'linear-gradient(160deg,#ead2bd,#a97a5c)'],
+['treats','Biscoff Lover','svg',croffle('#fff6e6','#b5651d'),'linear-gradient(160deg,#f6e6c8,#d9b27a)'],
+['treats','Banana Nutella','svg',croffle('#fff1b8','#4a2a18'),'linear-gradient(160deg,#fbeec7,#d8b57c)'],
+['treats','Strawberry Delight','svg',croffle('#fff','#e0455f'),'linear-gradient(160deg,#fde5e6,#e3b99a)'],
+['spaces','Window table','svg',room,'linear-gradient(160deg,#ead8ba,#cfab80)']];
+const gal=document.getElementById('gal'),lb=document.getElementById('lb'),big=document.getElementById('big'),cap=document.getElementById('cap');
+const art=g=>g[2]==='img'?`<img src="${g[3]}" alt="${g[1]}" loading="lazy" decoding="async">`:g[3];
+gal.innerHTML=G.map((g,i)=>`<button type="button" class="gi" data-k="${g[0]}" data-i="${i}" aria-label="Open ${g[1]}" style="background:${g[4]||'var(--glass)'}">${art(g)}<span>${g[1]}</span></button>`).join('');
+const fl=document.getElementById('fl');
+fl.onclick=e=>{const b=e.target.closest('button');if(!b)return;[...fl.children].forEach(x=>x.setAttribute('aria-pressed',x===b));gal.querySelectorAll('.gi').forEach(x=>x.hidden=b.dataset.k!=='all'&&x.dataset.k!==b.dataset.k)};
+let cur=0;const vis=()=>[...gal.querySelectorAll('.gi:not([hidden])')].map(x=>+x.dataset.i);
+const open=i=>{cur=i;big.innerHTML=art(G[i]);big.style.background=G[i][4]||'var(--glass)';cap.textContent=G[i][1];if(!lb.open)lb.showModal()};
+const step=d=>{const v=vis();open(v[(v.indexOf(cur)+d+v.length)%v.length])};
+gal.onclick=e=>{const b=e.target.closest('.gi');if(b)open(+b.dataset.i)};
+document.getElementById('pv').onclick=()=>step(-1);document.getElementById('nx').onclick=()=>step(1);document.getElementById('cl').onclick=()=>lb.close();
+lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+addEventListener('keydown',e=>{if(!lb.open)return;if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});
+
+</script>
+</body>
+</html>
